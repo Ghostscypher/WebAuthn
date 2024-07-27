@@ -663,9 +663,9 @@ class AppServiceProvider extends ServiceProvider
 
 ## Origins
 
-If you have a mobile app, or you expect remote frontends, software or interfaces outside your app server to use WebAuthn with your app, you will need to add these as valid origins. These are additional to your main Relying Party ID, which is your app domain.
+If you have an [Android app](https://developer.android.com/identity/sign-in/credential-manager?hl=en#verify-origin), or any other remote frontends, software or interfaces outside your app server to handle credentials on behalf of your app, you may need to add these as valid origins. These are additional to your main Relying Party ID, which is your app domain.
 
-You may set them using the `WEBAUTHN_ORIGINS` environment variable. If you have more than one, you can separate them using a comma.
+Simply add these origins as part of the `WEBAUTHN_ORIGINS` environment variable. If you have more than one, you can separate them using a comma.
 
 ```dotenv
 WEBAUTHN_ORIGINS=mirror-myapp.com,android:apk-key-hash:kffL-daBUxvHpY-4M8yhTavt5QnFEI2LsexohxrGPYU

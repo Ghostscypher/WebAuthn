@@ -11,7 +11,6 @@ use Laragear\WebAuthn\Assertion\Validator\AssertionValidator;
 use Laragear\WebAuthn\Contracts\WebAuthnAuthenticatable;
 use Laragear\WebAuthn\Exceptions\AssertionException;
 use Laragear\WebAuthn\JsonTransport;
-
 use function class_implements;
 use function config;
 use function in_array;

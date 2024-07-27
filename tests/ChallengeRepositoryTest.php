@@ -9,7 +9,6 @@ use Laragear\WebAuthn\ByteBuffer;
 use Laragear\WebAuthn\Challenge\Challenge;
 use Laragear\WebAuthn\Challenge\SessionChallengeRepository;
 use Laragear\WebAuthn\JsonTransport;
-
 use function now;
 
 class ChallengeRepositoryTest extends TestCase

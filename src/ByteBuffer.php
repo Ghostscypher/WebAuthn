@@ -7,7 +7,6 @@ use InvalidArgumentException;
 use JsonSerializable;
 use OutOfBoundsException;
 use Stringable;
-
 use function base64_decode;
 use function base64_encode;
 use function bin2hex;
