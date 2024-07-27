@@ -7,12 +7,14 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Str;
 use Laragear\WebAuthn\Assertion\Validator\AssertionValidation;
 use Laragear\WebAuthn\Attestation\Validator\AttestationValidation;
+
 use function array_filter;
 use function array_map;
 use function explode;
 use function hash_equals;
 use function is_string;
 use function parse_url;
+
 use const PHP_URL_HOST;
 
 /**
@@ -81,7 +83,7 @@ abstract class CheckRelyingPartyIdContained
     /**
      * Check if the string is a URL.
      *
-     * @return  array{scheme: string, host:string}|false
+     * @return array{scheme: string, host:string}|false
      */
     protected function toUrlArray(string $origin): array|false
     {
@@ -103,7 +105,7 @@ abstract class CheckRelyingPartyIdContained
             return false;
         }
 
-        return !Str::is('*.localhost', $url['host']);
+        return ! Str::is('*.localhost', $url['host']);
     }
 
     /**
@@ -124,6 +126,7 @@ abstract class CheckRelyingPartyIdContained
 
         return true;
     }
+
     /**
      * Gather all valid RP ids that this application should accept.
      *

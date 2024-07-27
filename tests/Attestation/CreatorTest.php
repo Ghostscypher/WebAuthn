@@ -15,6 +15,7 @@ use Ramsey\Uuid\Uuid;
 use Tests\DatabaseTestCase;
 use Tests\Stubs\WebAuthnAuthenticatableUser;
 use UnexpectedValueException;
+
 use function config;
 use function now;
 use function session;

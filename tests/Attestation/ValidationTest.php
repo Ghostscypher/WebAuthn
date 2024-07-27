@@ -31,6 +31,7 @@ use Tests\DatabaseTestCase;
 use Tests\FakeAuthenticator;
 use Tests\Stubs\WebAuthnAuthenticatableUser;
 use UnexpectedValueException;
+
 use function base64_decode;
 use function base64_encode;
 use function hex2bin;
@@ -533,7 +534,6 @@ class ValidationTest extends DatabaseTestCase
         $this->expectExceptionMessage('Attestation Error: Response origin not allowed for this app.');
 
         $this->validate();
-
     }
 
     public function test_check_origin_fails_if_empty(): void

@@ -29,6 +29,7 @@ use Tests\DatabaseTestCase;
 use Tests\FakeAuthenticator;
 use Tests\Stubs\WebAuthnAuthenticatableUser;
 use Throwable;
+
 use function base64_decode;
 use function base64_encode;
 use function json_encode;
@@ -404,7 +405,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'invalid',
                 'origin' => '',
-                'challenge' => ''
+                'challenge' => '',
             ])
         );
 
@@ -424,7 +425,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'webauthn.get',
                 'origin' => 'https://localhost',
-                'challenge' => ''
+                'challenge' => '',
             ])
         );
 
@@ -444,7 +445,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'webauthn.get',
                 'origin' => 'https://localhost',
-                'challenge' => 'invalid'
+                'challenge' => 'invalid',
             ])
         );
 
@@ -466,7 +467,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'webauthn.get',
                 'origin' => 'foo',
-                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE
+                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE,
             ])
         );
 
@@ -490,7 +491,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'webauthn.get',
                 'origin' => 'foo',
-                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE
+                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE,
             ])
         );
 
@@ -514,7 +515,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'webauthn.get',
                 'origin' => 'bar.foo',
-                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE
+                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE,
             ])
         );
 
@@ -534,7 +535,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'webauthn.get',
                 'origin' => '',
-                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE
+                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE,
             ])
         );
 
@@ -554,7 +555,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'webauthn.get',
                 'origin' => 'invalid',
-                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE
+                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE,
             ])
         );
 
@@ -575,7 +576,7 @@ class ValidationTest extends DatabaseTestCase
             json_encode([
                 'type' => 'webauthn.get',
                 'origin' => 'http://unsecure.com',
-                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE
+                'challenge' => FakeAuthenticator::ASSERTION_CHALLENGE,
             ])
         );
 
