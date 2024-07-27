@@ -7,10 +7,12 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Str;
 use Laragear\WebAuthn\Assertion\Validator\AssertionValidation;
 use Laragear\WebAuthn\Attestation\Validator\AttestationValidation;
+
 use function array_map;
 use function explode;
 use function hash_equals;
 use function parse_url;
+
 use const PHP_URL_HOST;
 
 /**
@@ -82,7 +84,7 @@ abstract class CheckRelyingPartyIdContained
         $url = parse_url($origin);
 
         if ($url) {
-            if (!isset($url['host'], $url['scheme'])) {
+            if (! isset($url['host'], $url['scheme'])) {
                 static::throw($validation, 'Response origin is invalid.');
             }
 
@@ -106,7 +108,7 @@ abstract class CheckRelyingPartyIdContained
         // This array ensures we always have at least one entry.
         return [
             $this->config->get('webauthn.relying_party.id') ?? parse_url($this->config->get('app.url'), PHP_URL_HOST),
-            ...array_map('trim', explode(',', $this->config->get('webauthn.origins', '')))
+            ...array_map('trim', explode(',', $this->config->get('webauthn.origins', ''))),
         ];
     }
 }
