@@ -7,6 +7,7 @@ use Laragear\WebAuthn\Assertion\Validator\AssertionValidation;
 use Laragear\WebAuthn\Exceptions\AssertionException;
 use Ramsey\Uuid\Exception\InvalidUuidStringException;
 use Ramsey\Uuid\Uuid;
+
 use function hash_equals;
 
 /**
